@@ -4,9 +4,9 @@ import Footer from './Footer'
 import ListItem from './ListItem'
 import Pagination from './Pagination'
 
-const SearchResault = ({ recipes, result }) => {
+const SearchResault = ({ recipes, result, addToFavorite, fid }) => {
   const [currentPage, setCurrentPage] = useState(1)
-  const [recipesPerPage] = useState(10)
+  const [recipesPerPage] = useState(13)
   const [id, setId] = useState('5ed6604591c37cdc054bca85')
 
   const indexOfLastRecipe = currentPage * recipesPerPage
@@ -17,7 +17,6 @@ const SearchResault = ({ recipes, result }) => {
   )
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
   const linkId = (digit) => setId(digit)
-  // console.log(id)
 
   return (
     <>
@@ -49,7 +48,7 @@ const SearchResault = ({ recipes, result }) => {
 
         <Footer />
       </div>
-      <RecipeView id={id} />
+      <RecipeView id={id} fid={fid} addToFavorite={addToFavorite} />
     </>
   )
 }

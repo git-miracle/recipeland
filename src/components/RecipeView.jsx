@@ -6,43 +6,40 @@ import RecipeDirections from './RecipeDirections'
 import RecipeInfo from './RecipeInfo'
 import RecipeIngredients from './RecipeIngredients'
 
-const RecipeView = ({ id }) => {
+const RecipeView = ({ id, addToFavorite, fid }) => {
   const [recipe, setRecipe] = useState([])
   const [ingredients, setIngredients] = useState([])
-  // useEffect(() => {
-  //   fetch(
-  //     'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bcc4b'
-  //   )
-  //     .then((res) => {
-  //       return res.json()
-  //     })
-  //     .then((data) => {
-  //       console.log(data)
-  //       setState(data.data.recipes)
-  //     })
-  //     .catch((err) => {
-  //       console.log(err.message)
-  //     })
-  // }, [])
-  console.log(id)
+  const key = '414f59eb-de8b-4c6f-87f2-d2b6fdfefa57'
+
   useEffect(() => {
     const fetchRecipe = async () => {
       const res = await axios.get(
-        `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`
+        `https://forkify-api.herokuapp.com/api/v2/recipes/${id}?${key}`
       )
       const { recipe } = res.data.data
       setRecipe(recipe)
-      console.log(recipe)
       const { ingredients } = res.data.data.recipe
-      console.log(ingredients)
       setIngredients(ingredients)
     }
     fetchRecipe()
   }, [id])
 
+  useEffect(() => {
+    const fetchRecipe = async () => {
+      const res = await axios.get(
+        `https://forkify-api.herokuapp.com/api/v2/recipes/${fid}?${key}`
+      )
+      const { recipe } = res.data.data
+      setRecipe(recipe)
+      const { ingredients } = res.data.data.recipe
+      setIngredients(ingredients)
+    }
+    fetchRecipe()
+  }, [fid])
+
   return (
     <div className='recipe-view'>
-      <RecipeInfo recipe={recipe} />
+      <RecipeInfo addToFavorite={addToFavorite} recipe={recipe} />
       <RecipeIngredients ingredients={ingredients} />
       <RecipeDirections recipe={recipe} />
     </div>

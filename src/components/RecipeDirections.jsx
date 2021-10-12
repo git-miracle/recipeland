@@ -9,6 +9,7 @@ const RecipeDirections = ({ recipe }) => {
         <p className='recipe__directions-text'>
           This recipe was carefully designed and tested by
           <span className='recipe__publisher'>
+            {' '}
             {recipe.publisher}
           </span>
           . Please check out directions at their website.

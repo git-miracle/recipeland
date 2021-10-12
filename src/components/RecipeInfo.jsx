@@ -6,7 +6,7 @@ import {
   FaUsers,
 } from 'react-icons/fa'
 
-const RecipeInfo = ({ recipe }) => {
+const RecipeInfo = ({ recipe, addToFavorite }) => {
   return (
     <div>
       <figure className='recipe__fig'>
@@ -40,7 +40,10 @@ const RecipeInfo = ({ recipe }) => {
         <div className='recipe__user-generated'>
           <FaRegUser />
         </div>
-        <button className='btn--round'>
+        <button
+          className='btn--round'
+          onClick={() => addToFavorite(recipe)}
+        >
           <FaRegStar />
         </button>
       </div>

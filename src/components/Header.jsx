@@ -1,7 +1,8 @@
 import React from 'react'
 import logo from '../img/logo.png'
-import { FaEdit, FaRegStar } from 'react-icons/fa'
+import { FaRegStar } from 'react-icons/fa'
 import SearchRecipe from './SearchRecipe'
+import Favorite from './Favorite'
 
 const Header = (props) => {
   return (
@@ -11,14 +12,14 @@ const Header = (props) => {
 
       <nav className='nav'>
         <ul className='nav__list'>
-          <li className='nav__item'>
+          {/* <li className='nav__item'>
             <button className='nav__btn nav__btn--add-recipe'>
               <div className='nav__icon'>
                 <FaEdit />
               </div>
               <span>Add recipe</span>
             </button>
-          </li>
+          </li> */}
           <li className='nav__item'>
             <button className='nav__btn nav__btn--bookmarks'>
               <div className='nav__icon'>
@@ -29,10 +30,17 @@ const Header = (props) => {
             <div className='bookmarks'>
               <ul className='bookmarks__list'>
                 <div className='message'>
-                  <p>
-                    No Favorite yet.
-                    <br /> Find a nice recipe and mark it.
-                  </p>
+                  {props.favorite ? (
+                    <Favorite
+                      favorite={props.favorite}
+                      linkId={props.linkId}
+                    />
+                  ) : (
+                    <p>
+                      No Favorite yet.
+                      <br /> Find a nice recipe and mark it.
+                    </p>
+                  )}
                 </div>
               </ul>
             </div>

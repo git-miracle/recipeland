@@ -2,7 +2,7 @@
   &__box {
     display: flex;
     align-items: center;
-    padding: 1.5rem 3.25rem;
+    padding: 0.7rem 2.25rem;
     transition: all 0.3s;
     border-right: 1px solid #fff;
     text-decoration: none;
@@ -19,8 +19,8 @@
   }
 
   &__fig {
-    flex: 0 0 5.8rem;
-    border-radius: 50%;
+    flex: 0 0 7.8rem;
+    // border-radius: 50%;
     overflow: hidden;
     height: 5.8rem;
     margin-right: 2rem;
@@ -40,7 +40,7 @@
         $color-grad-1,
         $color-grad-2
       );
-      opacity: 0.4;
+      opacity: 0.2;
     }
 
     img {

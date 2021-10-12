@@ -1,11 +1,12 @@
 import React from 'react'
-const ListItem = (props) => {
+
+const favorite = ({ favorite, linkId }) => {
   return (
     <div>
-      {props.recipes.map((recipe) => (
+      {favorite.map((recipe) => (
         <div
           key={recipe.id}
-          onClick={() => props.linkId(recipe.id)}
+          onClick={() => linkId(recipe.id)}
           className='preview'
         >
           <div className='preview__box'>
@@ -18,7 +19,6 @@ const ListItem = (props) => {
                   ? recipe.title.substring(0, 20) + '...'
                   : recipe.title}
               </h4>
-              <p className='preview__publisher'>{recipe.publisher}</p>
             </div>
           </div>
         </div>
@@ -27,4 +27,4 @@ const ListItem = (props) => {
   )
 }
 
-export default ListItem
+export default favorite

@@ -92,8 +92,8 @@ body {
 }
 
 .btn {
-  padding: 1.5rem 4rem;
-  font-size: 1.5rem;
+  padding: 1.3rem 3rem;
+  font-size: 1.4rem;
   font-weight: 600;
 }
 
@@ -314,7 +314,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.5rem 3.25rem;
+  padding: 0.7rem 2.25rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border-right: 1px solid #fff;
@@ -334,9 +334,8 @@ body {
 
 .preview__fig {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 5.8rem;
-          flex: 0 0 5.8rem;
-  border-radius: 50%;
+      -ms-flex: 0 0 7.8rem;
+          flex: 0 0 7.8rem;
   overflow: hidden;
   height: 5.8rem;
   margin-right: 2rem;
@@ -355,7 +354,7 @@ body {
   left: 0;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#ee8e57), to(#f86056));
   background-image: linear-gradient(to right bottom, #ee8e57, #f86056);
-  opacity: 0.4;
+  opacity: 0.2;
 }
 
 .preview__fig img {
@@ -646,7 +645,7 @@ body {
 }
 
 .pg-container {
-  padding: 15px;
+  padding: 0px;
 }
 
 .pagination {
@@ -656,10 +655,10 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 20px;
+  margin-top: 0px;
   font-size: 20px;
   border-top: 1px solid rgba(128, 128, 128, 0.342);
-  padding: 5px;
+  padding: 15px;
 }
 
 .pagination li {
@@ -697,6 +696,10 @@ body {
   color: #918581;
 }
 
+.footer {
+  text-align: center;
+}
+
 .recipe-view {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
@@ -721,7 +724,7 @@ body {
   left: 0;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#ee8e57), to(#f86056));
   background-image: linear-gradient(to right bottom, #ee8e57, #f86056);
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .recipe__img {
@@ -734,17 +737,16 @@ body {
 
 .recipe__title {
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  -webkit-transform: translate(-50%, 20%) skewY(-6deg);
-          transform: translate(-50%, 20%) skewY(-6deg);
+  bottom: 10%;
+  left: 42%;
+  -webkit-transform: translate(-50%, 20%);
+          transform: translate(-50%, 20%);
   color: #fff;
   font-weight: 700;
-  font-size: 3.25rem;
+  font-size: 3rem;
   text-transform: uppercase;
-  width: 50%;
-  line-height: 1.5;
-  text-align: center;
+  width: 80%;
+  line-height: 1.8;
 }
 
 .recipe__title span {
@@ -823,12 +825,6 @@ body {
   border-radius: 10rem;
   margin-left: auto;
   margin-right: 1.75rem;
-}
-
-.recipe__user-generated svg {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: #f38e82;
 }
 
 .recipe__ingredients {
