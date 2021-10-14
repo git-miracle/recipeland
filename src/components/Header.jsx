@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../img/logo.png'
-import { FaRegStar } from 'react-icons/fa'
+import { FaRegStar, FaStar } from 'react-icons/fa'
 import SearchRecipe from './SearchRecipe'
 import Favorite from './Favorite'
 
@@ -23,17 +23,22 @@ const Header = (props) => {
           <li className='nav__item'>
             <button className='nav__btn nav__btn--bookmarks'>
               <div className='nav__icon'>
-                <FaRegStar />
+                {props.favorite.length !== 0 ? (
+                  <FaStar />
+                ) : (
+                  <FaRegStar />
+                )}
               </div>
               <span>Favorite</span>
             </button>
             <div className='bookmarks'>
               <ul className='bookmarks__list'>
                 <div className='message'>
-                  {props.favorite ? (
+                  {props.favorite.length !== 0 ? (
                     <Favorite
                       favorite={props.favorite}
                       linkId={props.linkId}
+                      deleteFav={props.deleteFav}
                     />
                   ) : (
                     <p>

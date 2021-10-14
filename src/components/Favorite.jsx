@@ -1,6 +1,7 @@
 import React from 'react'
+import { FaTrashAlt } from 'react-icons/fa'
 
-const favorite = ({ favorite, linkId }) => {
+const favorite = ({ favorite, linkId, deleteFav }) => {
   return (
     <div>
       {favorite.map((recipe) => (
@@ -9,7 +10,7 @@ const favorite = ({ favorite, linkId }) => {
           onClick={() => linkId(recipe.id)}
           className='preview'
         >
-          <div className='preview__box'>
+          <div className='preview__box '>
             <figure className='preview__fig'>
               <img src={recipe.image_url} alt='img' />
             </figure>
@@ -20,6 +21,11 @@ const favorite = ({ favorite, linkId }) => {
                   : recipe.title}
               </h4>
             </div>
+
+            <FaTrashAlt
+              className='preview__fav'
+              onClick={() => deleteFav(recipe.id)}
+            />
           </div>
         </div>
       ))}

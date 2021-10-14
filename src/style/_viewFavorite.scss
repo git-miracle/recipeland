@@ -1,0 +1,47 @@
+.favorite-container {
+  grid-area: recipe;
+  background-color: $color-grey-light-1;
+
+  ul {
+    width: 790;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+  }
+  &__box {
+    // float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  &__fig {
+    width: 24rem;
+    height: 22rem;
+    float: left;
+  }
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  li {
+    list-style: none;
+  }
+  &__title {
+    display: inline-block;
+    width: 100%;
+    background-color: lightsalmon;
+    font-size: 1.7rem;
+    color: white;
+  }
+  &__data {
+    display: inline-block;
+    width: 90%;
+    text-align: center;
+  }
+}
+.heading {
+  padding-left: 11px;
+}

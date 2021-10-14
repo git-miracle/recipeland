@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import SearchResault from './components/SearchResault'
 
@@ -11,11 +11,27 @@ function App() {
   const [favorite, setFavorite] = useState([])
   const [fid, setFid] = useState('')
 
-  const addToFavorite = (recipe) => {
-    setFavorite((prev) => [...prev, recipe])
-    console.log('worked')
+  useEffect(() => {
+    const favRecipe = JSON.parse(localStorage.getItem('fav-recipe'))
+    setFavorite(favRecipe)
+  }, [])
+
+  const saveLocalStorage = (items) => {
+    localStorage.setItem('fav-recipe', JSON.stringify(items))
   }
-  console.log(favorite)
+
+  const addToFavorite = (recipe) => {
+    // setFavorite((prev) => prev.concat(recipe))
+    //const arr = prev => [...prev, reciep]
+    const arr = [...favorite, recipe]
+
+    setFavorite(arr)
+    saveLocalStorage(arr)
+  }
+
+  const deleteFav = (id) => {
+    setFavorite(favorite.filter((item) => item.id !== id))
+  }
   const searchRecipe = (text) => {
     // setIsLoading(true)
 
@@ -55,8 +71,10 @@ function App() {
         favorite={favorite}
         searchRecipe={searchRecipe}
         linkId={linkId}
+        deleteFav={deleteFav}
       />
       <SearchResault
+        favorite={favorite}
         recipes={recipes}
         result={result}
         addToFavorite={addToFavorite}

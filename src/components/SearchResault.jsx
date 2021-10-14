@@ -3,11 +3,18 @@ import RecipeView from './RecipeView'
 import Footer from './Footer'
 import ListItem from './ListItem'
 import Pagination from './Pagination'
+import ViewFavorite from './ViewFavorite'
 
-const SearchResault = ({ recipes, result, addToFavorite, fid }) => {
+const SearchResault = ({
+  recipes,
+  result,
+  addToFavorite,
+  fid,
+  favorite,
+}) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [recipesPerPage] = useState(13)
-  const [id, setId] = useState('5ed6604591c37cdc054bca85')
+  const [id, setId] = useState('')
 
   const indexOfLastRecipe = currentPage * recipesPerPage
   const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage
@@ -48,7 +55,11 @@ const SearchResault = ({ recipes, result, addToFavorite, fid }) => {
 
         <Footer />
       </div>
-      <RecipeView id={id} fid={fid} addToFavorite={addToFavorite} />
+      {!id ? (
+        <ViewFavorite favorite={favorite} />
+      ) : (
+        <RecipeView id={id} fid={fid} addToFavorite={addToFavorite} />
+      )}
     </>
   )
 }
