@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import SearchResault from './components/SearchResault'
