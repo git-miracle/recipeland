@@ -15,7 +15,7 @@ function App() {
     const favRecipe = JSON.parse(localStorage.getItem('fav-recipe'))
     setFavorite(favRecipe)
   }, [])
-
+  console.log(favorite)
   const saveLocalStorage = (items) => {
     localStorage.setItem('fav-recipe', JSON.stringify(items))
   }
@@ -42,7 +42,6 @@ function App() {
         return res.json()
       })
       .then((data) => {
-        console.log(data)
         setResult(data.results)
         setRecipe(data.data.recipes)
         setLoading(false)
@@ -52,6 +51,7 @@ function App() {
       })
   }
   const linkId = (digit) => setFid(digit)
+  console.log(fid)
 
   // const searchRecipe = async (text) => {
   //   try {

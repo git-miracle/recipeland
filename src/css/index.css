@@ -336,7 +336,6 @@ body {
 
 .preview:hover {
   background-color: #f9f5f3;
-  border-left: 5px solid lightpink;
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
   -webkit-transition: all 0.4s;

@@ -27,7 +27,7 @@ const SearchResault = ({
   )
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
   const linkId = (digit) => setId(digit)
-  console.log(result)
+
   return (
     <>
       <div className='search-resault'>
@@ -48,7 +48,7 @@ const SearchResault = ({
 
         <Footer />
       </div>
-      {!id ? (
+      {!id && !fid ? (
         <ViewFavorite favorite={favorite} />
       ) : (
         <RecipeView id={id} fid={fid} addToFavorite={addToFavorite} />
