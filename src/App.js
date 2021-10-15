@@ -9,6 +9,7 @@ function App() {
   const [result, setResult] = useState('')
   const [favorite, setFavorite] = useState([])
   const [fid, setFid] = useState('')
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const favRecipe = JSON.parse(localStorage.getItem('fav-recipe'))
@@ -32,7 +33,7 @@ function App() {
     setFavorite(favorite.filter((item) => item.id !== id))
   }
   const searchRecipe = (text) => {
-    // setIsLoading(true)
+    setLoading(true)
 
     fetch(
       `https://forkify-api.herokuapp.com/api/v2/recipes?search=${text}`
@@ -44,7 +45,7 @@ function App() {
         console.log(data)
         setResult(data.results)
         setRecipe(data.data.recipes)
-        //  setIsLoading(false);
+        setLoading(false)
       })
       .catch((err) => {
         console.log(err.message)
@@ -73,6 +74,7 @@ function App() {
         deleteFav={deleteFav}
       />
       <SearchResault
+        loading={loading}
         favorite={favorite}
         recipes={recipes}
         result={result}

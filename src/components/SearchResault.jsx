@@ -4,9 +4,12 @@ import Footer from './Footer'
 import ListItem from './ListItem'
 import Pagination from './Pagination'
 import ViewFavorite from './ViewFavorite'
+import Result from './Result'
+import Spinner from './Spinner'
 
 const SearchResault = ({
   recipes,
+  loading,
   result,
   addToFavorite,
   fid,
@@ -24,23 +27,13 @@ const SearchResault = ({
   )
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
   const linkId = (digit) => setId(digit)
-
+  console.log(result)
   return (
     <>
       <div className='search-resault'>
         <ul className='results'>
-          {result && (
-            <h2 style={{ textAlign: 'center', marginBottom: '10px' }}>
-              {' '}
-              {result} resaults found.
-            </h2>
-          )}
-          {!result && (
-            <h2 style={{ textAlign: 'center', marginBottom: '10px' }}>
-              Start by searching for a recipe
-              <br /> or an ingredient. Have fun!
-            </h2>
-          )}
+          {loading ? <Spinner /> : <Result result={result} />}
+
           <li>
             {recipes && (
               <ListItem linkId={linkId} recipes={currentRecipes} />

@@ -247,8 +247,8 @@ body {
 }
 
 .spinner svg {
-  height: 6rem;
-  width: 6rem;
+  height: 7rem;
+  width: 7rem;
   fill: #f38e82;
   -webkit-animation: rotate 2s infinite linear;
           animation: rotate 2s infinite linear;

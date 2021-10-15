@@ -1,9 +1,11 @@
 import React from 'react'
+import Spinner from './Spinner'
 
 const ViewFavorite = ({ favorite }) => {
   return (
     <div className='favorite-container'>
       <h1 className='heading'>Favorite recipe:</h1>
+      {!favorite && <Spinner />}
       <ul>
         {favorite.map((recipe) => (
           <li

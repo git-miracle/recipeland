@@ -1,10 +1,10 @@
 import React from 'react'
-import { FaSpinner } from 'react-icons/fa'
+import { RiLoader2Fill } from 'react-icons/ri'
 
 const Spinner = () => {
   return (
     <div className='spinner'>
-      <FaSpinner className='svg' />
+      <RiLoader2Fill className='svg' />
     </div>
   )
 }
