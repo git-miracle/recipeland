@@ -7,10 +7,14 @@ const favorite = ({ favorite, linkId, deleteFav }) => {
       {favorite.map((recipe) => (
         <div
           key={recipe.id}
-          onClick={() => linkId(recipe.id)}
-          className='preview'
+          // onClick={() => linkId(recipe.id)}
+
+          className='fav-list-box'
         >
-          <div className='preview__box '>
+          <div
+            className='preview__box '
+            onClick={() => linkId(recipe.id)}
+          >
             <figure className='preview__fig'>
               <img src={recipe.image_url} alt='img' />
             </figure>
@@ -21,12 +25,13 @@ const favorite = ({ favorite, linkId, deleteFav }) => {
                   : recipe.title}
               </h4>
             </div>
-
-            <FaTrashAlt
-              className='preview__fav'
-              onClick={() => deleteFav(recipe.id)}
-            />
           </div>
+          <FaTrashAlt
+            className='preview__fav'
+            onClick={() => deleteFav(recipe)}
+            //alternate way is use just id as below
+            // onClick={() => deleteFav(recipe.id)}
+          />
         </div>
       ))}
     </div>

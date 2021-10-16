@@ -15,11 +15,11 @@
     margin-left: auto;
     height: 2rem;
     width: 2rem;
+    cursor: pointer;
   }
 
   &:hover {
     background-color: $color-grey-light-1;
-    // border-left: 5px solid lightpink;
     transform: translateY(-2px);
     transition: all 0.4s;
   }
@@ -30,7 +30,6 @@
 
   &__fig {
     flex: 0 0 7.8rem;
-    // border-radius: 50%;
     overflow: hidden;
     height: 5.8rem;
     margin-right: 2rem;
@@ -110,4 +109,11 @@
       fill: $color-primary;
     }
   }
+}
+
+//favorite list container
+.fav-list-box {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
 }

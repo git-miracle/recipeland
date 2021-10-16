@@ -12,28 +12,39 @@ function App() {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    const favRecipe = JSON.parse(localStorage.getItem('fav-recipe'))
-    setFavorite(favRecipe)
+    if (Boolean(localStorage.getItem('fav-recipe'))) {
+      console.log(Boolean(localStorage.getItem('fav-recipe')))
+      const favRecipe = JSON.parse(localStorage.getItem('fav-recipe'))
+      setFavorite(favRecipe)
+    } else {
+      setFavorite([])
+    }
   }, [])
-  console.log(favorite)
+
   const saveLocalStorage = (items) => {
     localStorage.setItem('fav-recipe', JSON.stringify(items))
   }
-
   const addToFavorite = (recipe) => {
-    // setFavorite((prev) => prev.concat(recipe))
-    //const arr = prev => [...prev, reciep]
-    const arr = [...favorite, recipe]
+    //alternats:
+    // 1- setFavorite((prev) => prev.concat(recipe))
+    // 2- const newFavorite = (prev) => [...prev, recipe]
 
+    const newFavorite = [...favorite, recipe]
+    setFavorite(newFavorite)
+    saveLocalStorage(newFavorite)
+  }
+
+  //we can use id  instead recipe as argoman and change recipe.id to id
+  const deleteFav = (recipe) => {
+    console.log(recipe)
+    const arr = favorite.filter((item) => item.id !== recipe.id)
     setFavorite(arr)
     saveLocalStorage(arr)
   }
-
-  const deleteFav = (id) => {
-    setFavorite(favorite.filter((item) => item.id !== id))
-  }
   const searchRecipe = (text) => {
     setLoading(true)
+    setRecipe([])
+    setResult('')
 
     fetch(
       `https://forkify-api.herokuapp.com/api/v2/recipes?search=${text}`
@@ -51,7 +62,6 @@ function App() {
       })
   }
   const linkId = (digit) => setFid(digit)
-  console.log(fid)
 
   // const searchRecipe = async (text) => {
   //   try {

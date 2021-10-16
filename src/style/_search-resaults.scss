@@ -33,14 +33,14 @@
     &:not(:last-child) {
       margin-right: 5px;
     }
-    a {
-      text-decoration: none;
+    p {
       color: inherit;
       transition: all 0.3s;
       padding: 3px;
       display: block;
+      cursor: pointer;
     }
-    a:hover {
+    p:hover {
       transform: scale(1.5) translateY(-3px);
       color: red;
     }

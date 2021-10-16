@@ -14,9 +14,9 @@ const Pagination = ({ recipesPerPage, totalRecipes, paginate }) => {
       <ul className='pagination'>
         {pageNumber.map((number) => (
           <li key={number}>
-            <a onClick={() => paginate(number)} href='!#'>
+            <p className='page-num' onClick={() => paginate(number)}>
               {number}
-            </a>
+            </p>
           </li>
         ))}
       </ul>

@@ -16,6 +16,7 @@ const RecipeView = ({ id, addToFavorite, fid }) => {
   useEffect(() => {
     const fetchRecipe = async () => {
       setLoading(true)
+
       const res = await axios.get(
         `https://forkify-api.herokuapp.com/api/v2/recipes/${id}?${key}`
       )
@@ -28,20 +29,22 @@ const RecipeView = ({ id, addToFavorite, fid }) => {
     fetchRecipe()
   }, [id])
 
-  console.log(fid)
   useEffect(() => {
-    setLoading(true)
-    const fetchRecipe = async () => {
-      const res = await axios.get(
-        `https://forkify-api.herokuapp.com/api/v2/recipes/${fid}?${key}`
-      )
-      const { recipe } = res.data.data
-      setRecipe(recipe)
-      const { ingredients } = res.data.data.recipe
-      setIngredients(ingredients)
-      setLoading(false)
+    if (fid) {
+      setLoading(true)
+      const fetchRecipe = async () => {
+        const res = await axios.get(
+          `https://forkify-api.herokuapp.com/api/v2/recipes/${fid}?${key}`
+        )
+        const { recipe } = res.data.data
+        setRecipe(recipe)
+        const { ingredients } = res.data.data.recipe
+        setIngredients(ingredients)
+        setLoading(false)
+      }
+      fetchRecipe()
     }
-    fetchRecipe()
+    return
   }, [fid])
 
   return (
