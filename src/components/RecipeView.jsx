@@ -11,6 +11,7 @@ const RecipeView = ({ id, addToFavorite, fid }) => {
   const [loading, setLoading] = useState(false)
   const [recipe, setRecipe] = useState([])
   const [ingredients, setIngredients] = useState([])
+
   const key = '414f59eb-de8b-4c6f-87f2-d2b6fdfefa57'
 
   useEffect(() => {
