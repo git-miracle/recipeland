@@ -6,7 +6,7 @@ const Result = ({ result }) => {
       {result !== '' && (
         <h2 style={{ textAlign: 'center', marginBottom: '10px' }}>
           {' '}
-          {result} resaults found.
+          {result} resault(s) found.
         </h2>
       )}
 
