@@ -16,14 +16,14 @@ const ViewFavorite = ({ favorite }) => {
               <div className='favorite-container__box '>
                 <figure className='favorite-container__fig'>
                   <img src={recipe.image_url} alt='img' />
+                  <div className='favorite-container__data'>
+                    <h4 className='favorite-container__title'>
+                      {recipe.title.length > 20
+                        ? recipe.title.substring(0, 20) + '...'
+                        : recipe.title}
+                    </h4>
+                  </div>
                 </figure>
-                <div className='favorite-container__data'>
-                  <h4 className='favorite-container__title'>
-                    {recipe.title.length > 20
-                      ? recipe.title.substring(0, 20) + '...'
-                      : recipe.title}
-                  </h4>
-                </div>
               </div>
             </li>
           ))}

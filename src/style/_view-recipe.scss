@@ -70,25 +70,25 @@
   &__details {
     display: flex;
     align-items: center;
-    padding: 7.5rem 8rem 3.5rem 8rem;
+    padding: 2.5rem 3rem 2.5rem 3rem;
   }
 
   &__info {
-    font-size: 1.65rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     display: flex;
     align-items: center;
 
     &:not(:last-child) {
-      margin-right: 4.5rem;
+      margin-right: 2.5rem;
     }
   }
 
   &__info-icon {
-    height: 2.8rem;
-    width: 2.8rem;
+    height: 2.5rem;
+    width: 2.5rem;
     fill: $color-primary;
-    margin-right: 1.15rem;
+    margin-right: 0.5rem;
   }
 
   &__info-data {
@@ -119,7 +119,7 @@
   ///////////
   // INGREDIENTS
   &__ingredients {
-    padding: 5rem 5rem;
+    padding: 3rem 3rem;
     font-size: 1.6rem;
     line-height: 1.4;
     background-color: $color-grey-light-2;
@@ -131,7 +131,7 @@
   &__ingredient-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2.5rem 3rem;
+    gap: 1.5rem 1.5rem;
     list-style: none;
   }
 
@@ -158,7 +158,7 @@
   ///////////
   // DIRECTIONS
   &__directions {
-    padding: 5rem 10rem;
+    padding: 3rem 4rem;
     padding-bottom: 5rem;
     display: flex;
     flex-direction: column;

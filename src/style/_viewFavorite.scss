@@ -8,6 +8,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: 0 auto;
+    @include respond(phone) {
+      display: flex;
+      flex-direction: column;
+    }
   }
   &__box {
     // float: left;
@@ -20,6 +24,8 @@
     width: 24rem;
     height: 22rem;
     float: left;
+    display: flex;
+    flex-direction: column;
   }
   img {
     height: 100%;
@@ -34,14 +40,25 @@
     width: 100%;
     background-color: lightsalmon;
     font-size: 1.7rem;
-    color: white;
+    color: rgb(255, 255, 255);
+
+    @include respond(phone) {
+      color: red;
+      width: 100%;
+    }
   }
   &__data {
     display: inline-block;
-    width: 90%;
+    width: 100%;
     text-align: center;
+    @include respond(phone) {
+      width: 100%;
+    }
   }
 }
 .heading {
   padding-left: 11px;
+  @include respond(phone) {
+    text-align: center;
+  }
 }
