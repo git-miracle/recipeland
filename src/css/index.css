@@ -556,6 +556,8 @@ body {
 .search__btn {
   font-weight: 600;
   font-family: inherit;
+  background: -webkit-gradient(linear, left top, right bottom, from(#f0a174), to(#f86056));
+  background: linear-gradient(to right bottom, #f0a174, #f86056);
 }
 
 .nav {
@@ -814,7 +816,7 @@ body {
 }
 
 .recipe__info {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -829,8 +831,8 @@ body {
 }
 
 .recipe__info-icon {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2.2rem;
+  width: 2.2rem;
   fill: #f38e82;
   margin-right: 0.5rem;
 }
@@ -889,7 +891,7 @@ body {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  gap: 1.5rem 1.5rem;
+  gap: 1.5rem 3rem;
   list-style: none;
 }
 
@@ -922,7 +924,7 @@ body {
 }
 
 .recipe__directions {
-  padding: 3rem 4rem;
+  padding: 3rem 15rem;
   padding-bottom: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;

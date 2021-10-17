@@ -53,6 +53,11 @@
   &__btn {
     font-weight: 600;
     font-family: inherit;
+    background: linear-gradient(
+      to right bottom,
+      #f0a174,
+      $color-grad-2
+    );
   }
 }
 
