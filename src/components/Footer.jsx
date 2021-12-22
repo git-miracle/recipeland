@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className='footer'>
       <p className='copyright'>
-        &copy; Copyright 2021 by Farhad Nazmi
+        &copy; Copyright 2022 by Farhad Nazmi
         {/* <a
           className='twitter-link'
           target='_blank'
